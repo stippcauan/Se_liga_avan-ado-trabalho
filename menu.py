@@ -12,7 +12,7 @@ def calcular_preco_compra():
     total = 0
     while True:
             preco_str = input("Digite o preço do item (ou 0 para finalizar): R$ ")
-            if preco_str == 4:
+            if preco_str == 'f':
                 break
             total += preco_str
             print("O preço não pode ser negativo. Tente novamente.")
@@ -37,7 +37,7 @@ def menu_principal():
         if opcao == '1':
             calcular_idade()
         elif opcao == '2':
-            calcular_preco_compra
+            calcular_preco_compra()
         elif opcao == '3':
             print("sair do programa")
             break
