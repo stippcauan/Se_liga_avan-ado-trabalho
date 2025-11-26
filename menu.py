@@ -9,16 +9,17 @@ def calcular_idade():
 
 
 def calcular_preco_compra():
-    total = 0
+    total = 0.0
     while True:
-            preco_str = input("Digite o preço do item (ou 0 para finalizar): R$ ")
-            if preco_str == 'f':
+        try:
+            preco_str = input("Digite o preço do item (ou '4' para finalizar): ")
+            if preco_str.lower() == '4':
                 break
-            total += preco_str
-            print("O preço não pode ser negativo. Tente novamente.")
-            print("\nEntrada inválida. Por favor, digite um preço válido ou 'f' para finalizar.\n")
-    print(f"\nO preço total da compra é: R$ {total:.2f}\n")
-
+            preco = float(preco_str)
+            total += preco
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou '4'.")
+    print(f"\nO preço total da compra é: R$ {total:.2f}.\n")
 
 def menu_principal():
     while True:
